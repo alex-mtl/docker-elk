@@ -11,5 +11,5 @@ processors:
 
 output.logstash:
   hosts: ['logstash:5044']
-  #username: elastic
-  #password: changeme
+  username: elastic
+  password: MagicWord
