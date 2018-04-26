@@ -5,5 +5,15 @@ docker run --name kibana -d -p 5601:5601 --link elastic:elastic -v /c/users/a.ki
 C:\Users\a.kim\Elastic\config\kibana.yml
 -v config/kibana.yml:/usr/share/kibana/config/kibana.yml
 
+docker run -d --name logstash -p 5044:5044 --link elastic:elastic -v /c/users/a.kim/elastic/config/logstash.yml:/usr/share/logstash/config/logstash.yml -v /c/users/a.kim/elastic/config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf docker.elastic.co/logstash/logstash:6.2.4
 
-docker run -d --name logstash -p 9600:9600 --link elastic:elastic -v /c/users/a.kim/elastic/config/logstash.yml:/usr/share/logstash/config/logstash.yml docker.elastic.co/logstash/logstash:6.2.4
+
+docker run -d --name filebeat --link logstash:logstash docker.elastic.co/beats/filebeat:6.2.4
+
+docker run -d --name filebeat --link logstash:logstash -v /c/users/a.kim/elastic/config/filebeat.yml:/usr/share/filebeat/filebeat.yml docker.elastic.co/beats/filebeat:6.2.4
+
+docker run -d --name filebeat --link logstash:logstash -v /c/users/a.kim/elastic/config/filebeat.yml:/usr/share/filebeat/filebeat.yml -v /c/users/a.kim/elastic/config/interim.prospector.yml:/usr/share/filebeat/prospectors.d/interim.prospector.yml docker.elastic.co/beats/filebeat:6.2.4
+
+docker run -d --name filebeat --link logstash:logstash -v /c/users/a.kim/elastic/config/filebeat.yml:/usr/share/filebeat/filebeat.yml -v /c/users/a.kim/elastic/config/interim.prospector.yml:/usr/share/filebeat/prospectors.d/interim.prospector.yml docker.elastic.co/beats/filebeat:6.2.4
+
+vendor/bundle/jruby/2.3.0/gems/logstash-patterns-core-4.1.2/patterns/interim

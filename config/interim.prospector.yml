@@ -1,0 +1,35 @@
+- type: log
+  doc_type: interim
+  paths:
+    - /mnt/log/mdcl/BENCH_LLAB/log/2017-10-10_1101.txt
+    #- /var/www/html/webservice_interim/mdcl/AIC_PROD/log/2018-03-28*.txt
+    #- /var/www/html/webservice_interim/mdcl/AIC_PROD/log/2018-03-29*.txt
+    #- /var/www/html/webservice_interim/mdcl/AIC_PROD/log/2018-03-30*.txt
+    #- /var/www/html/webservice_interim/mdcl/AIC_PROD/log/2018-03-31*.txt
+    #- /var/www/html/webservice_interim/mdcl/AIC_PROD/log/2018-04-*.txt
+    #- /var/www/html/webservice_interim/mdcl/BIZOU_PROD_AA/log/2018-03-*.txt
+    #- /var/www/html/webservice_interim/mdcl/BIZOU_PROD_AA/log/2018-04-*.txt
+    #- /var/www/html/webservice_interim/mdcl/GUERLAIN_PROD/log/2018-03-*.txt
+    #- /var/www/html/webservice_interim/mdcl/GUERLAIN_PROD/log/2018-04-*.txt
+    #- /mnt/log/mdcl/JJAZZ_PROD/log/2018-03-*.txt
+  # Configure the file encoding for reading files with international characters
+  # following the W3C recommendation for HTML5 (http://www.w3.org/TR/encoding).
+  # Some sample encodings:
+  #   plain, utf-8, utf-16be-bom, utf-16be, utf-16le, big5, gb18030, gbk,
+  #    hz-gb-2312, euc-kr, euc-jp, iso-2022-jp, shift-jis, ...
+  #encoding: plain
+  multiline.pattern: '^\*{3}[[:space:]]F'
+  multiline.negate: true
+  multiline.match: after
+
+    # The maximum number of lines that are combined to one event.
+    # In case there are more the max_lines the additional lines are discarded.
+    # Default is 500
+    #max_lines: 500
+    #max_lines: 2000
+
+    # After the defined timeout, an multiline event is sent even if no new pattern was found to start a new event
+    # Default is 5s.
+    #timeout: 5s
+    #timeout: 60s
+
