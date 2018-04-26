@@ -1,5 +1,9 @@
-docker run --name elastic -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e ELASTIC_PASSWORD=MagicWord docker.elastic.co/elasticsearch/elasticsearch-platinum:6.2.4
+docker run --name elastic -d -p 9200:9200 -e "discovery.type=single-node" -e ELASTIC_PASSWORD=MagicWord docker.elastic.co/elasticsearch/elasticsearch-platinum:6.2.4
 
-docker run --name kibana -d -p 5601:5601 -l elastic -e "elasticsearch.url=http://elasticsearch:9200" -e "elasticsearch.password=MagicWord" -e "xpack.security.enabled=false" docker.elastic.co/kibana/kibana:6.2.4
+docker run --name kibana -d -p 5601:5601 --link elastic:elastic -v /c/users/a.kim/elastic/config/kibana.yml:/usr/share/kibana/config/kibana.yml docker.elastic.co/kibana/kibana:6.2.4
 
-docker run -e "elasticsearch.url=http://localhost:9200" changeme" -e "elasticsearch.username=elastic" docker.elastic.co/kibana/kibana:5.2.2
+C:\Users\a.kim\Elastic\config\kibana.yml
+-v config/kibana.yml:/usr/share/kibana/config/kibana.yml
+
+
+docker run -d --name logstash -p 9600:9600 --link elastic:elastic -v /c/users/a.kim/elastic/config/logstash.yml:/usr/share/logstash/config/logstash.yml docker.elastic.co/logstash/logstash:6.2.4
