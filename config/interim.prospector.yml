@@ -1,7 +1,10 @@
 - type: log
   doc_type: interim
+  close_eof: true
   paths:
     - /mnt/log/mdcl/BENCH_LLAB/log/2017-10-10_1101.txt
+    - /mnt/log/import/*.txt
+    - /mnt/log/import/*/log/*.txt
     #- /var/www/html/webservice_interim/mdcl/AIC_PROD/log/2018-03-28*.txt
     #- /var/www/html/webservice_interim/mdcl/AIC_PROD/log/2018-03-29*.txt
     #- /var/www/html/webservice_interim/mdcl/AIC_PROD/log/2018-03-30*.txt
