@@ -1,0 +1,9 @@
+http.host: "0.0.0.0"
+xpack.monitoring.elasticsearch.url: http://10.240.0.7:9200
+xpack.monitoring.elasticsearch.username: logstash_system
+xpack.monitoring.elasticsearch.password: logst@sh
+#xpack.management.enabled: true
+#xpack.management.elasticsearch.url: http://elastic:9200
+#xpack.management.elasticsearch.username: logstash_sysadmin
+#xpack.management.elasticsearch.password: logstash!
+#xpack.management.pipeline.id: ["interim"]
