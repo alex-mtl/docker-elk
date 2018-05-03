@@ -1,5 +1,7 @@
 docker run --name elastic -d -p 9200:9200 -e "discovery.type=single-node" -e ELASTIC_PASSWORD=MagicWord docker.elastic.co/elasticsearch/elasticsearch-platinum:6.2.4
 
+RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install mapper-size
+
 docker run --name kibana -d -p 5601:5601 --link elastic:elastic -v /c/users/a.kim/elastic/config/kibana.yml:/usr/share/kibana/config/kibana.yml docker.elastic.co/kibana/kibana:6.2.4
 
 C:\Users\a.kim\Elastic\config\kibana.yml
