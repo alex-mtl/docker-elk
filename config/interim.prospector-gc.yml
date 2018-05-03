@@ -1,0 +1,21 @@
+- type: log
+  doc_type: interim
+  close_eof: true
+  paths:
+    #- /var/www/html/weblog/import/*/log/*.txt
+    - /var/www/html/webservice_interim/mdcl/*/log/2018-04-19*.txt
+  multiline.pattern: '^\*{3}[[:space:]]F'
+  multiline.negate: true
+  multiline.match: after
+
+    # The maximum number of lines that are combined to one event.
+    # In case there are more the max_lines the additional lines are discarded.
+    # Default is 500
+    #max_lines: 500
+  multiline.max_lines: 10000
+
+    # After the defined timeout, an multiline event is sent even if no new pattern was found to start a new event
+    # Default is 5s.
+    #timeout: 5s
+    #timeout: 60s
+
