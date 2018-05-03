@@ -3,7 +3,8 @@
   close_eof: true
   paths:
     #- /var/www/html/weblog/import/*/log/*.txt
-    - /var/www/html/webservice_interim/mdcl/*/log/2018-04-19*.txt
+    #- /var/www/html/webservice_interim/mdcl/*/log/2018-04-19*.txt
+    - /mnt/log/import/*/log/2018-04-19*.txt
   multiline.pattern: '^\*{3}[[:space:]]F'
   multiline.negate: true
   multiline.match: after
