@@ -2,12 +2,17 @@
   doc_type: interim
  # close_eof: true
   close_inactive: 20s
+  ignore_older: 24h
+  close_*: 48h
+  clean_older: 36h
+  clean_*: 48h
   paths:
     #- /var/www/html/weblog/import/*/log/*.txt
     #- /var/www/html/webservice_interim/mdcl/*/log/2018-04-19*.txt
-    - /mnt/log/import/*/log/2018-05-10*.txt
-#    - /mnt/log/import/*/log/2018-04-30*.txt
-#    - /mnt/log/import/*/log/2018-05-01*.txt
+    #- /mnt/log/import/*/log/*.txt
+    - /mnt/log/import/*/log/*.txt
+#    - /mnt/log/import/*/log/2018-05-30*.txt
+#    - /mnt/log/import/*/log/2018-05-29*.txt
 #    - /mnt/log/import/*/log/2018-05-02*.txt
   multiline.pattern: '^\*{3}[[:space:]]F'
   multiline.negate: true
