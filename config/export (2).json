@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "adb1cbc0-633f-11e8-aef6-93e02ffb4c5d",
+    "_type": "search",
+    "_source": {
+      "title": "JWARWICK_PROD",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"db9dcd60-4d4e-11e8-9624-b36de8a45bb6\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"db9dcd60-4d4e-11e8-9624-b36de8a45bb6\",\"type\":\"phrase\",\"key\":\"md_client\",\"value\":\"JWARWICK_PROD\",\"params\":{\"query\":\"JWARWICK_PROD\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"md_client\":{\"query\":\"JWARWICK_PROD\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "418808f0-4d65-11e8-aef6-93e02ffb4c5d",
+    "_type": "search",
+    "_source": {
+      "title": "Raw Events",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "md_client",
+        "md_branch_id",
+        "md_cash_unit",
+        "md_function",
+        "md_execution_time"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"db9dcd60-4d4e-11e8-9624-b36de8a45bb6\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  }
+]
